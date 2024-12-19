@@ -19,7 +19,7 @@ const int UNKNOWN_TYPE = 4;
  */
 static int get_op_type(char *op)
 {
-    const char *r_type_op[] = {"add", "sub", "and", "or", "xor", "slt", "sll", "sra"};
+    const char *r_type_op[] = {"add", "sub", "and", "or", "xor", "nor", "slt", "sll", "sra"};
     const char *i_type_op[] = {"addi", "andi", "ori", "xori", "slti"};
     const char *mem_type_op[] = {"lw", "lb", "sw", "sb"};
     const char *u_type_op[] = {"lui"};
@@ -189,6 +189,9 @@ void handle_r_type(char *op, char *instruction, registers_t *registers)
     }
     if(strcmp(op, "xor") == 0){
         registers->r[rd_num] = registers->r[rs1_num] ^ registers->r[rs2_num];
+    }
+    if(strcmp(op, "nor") == 0){
+        registers->r[rd_num] = ~(registers->r[rs1_num] | registers->r[rs2_num]);
     }
     if(strcmp(op, "slt") == 0){
         if(registers->r[rs1_num] < registers->r[rs2_num]){

@@ -1,0 +1,4 @@
+## start[1] = 10
+addi x2, x1, -5
+slti x3, x1, 15
+xori x4, x1, 0xFF

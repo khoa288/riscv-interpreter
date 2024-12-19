@@ -1,0 +1,4 @@
+## start[1] = 5
+addi    x2 ,   x1   ,    0x10
+sw x2 , 4(x1 )
+lw    x3, 4 ( x1 )

@@ -1,0 +1,7 @@
+## start[1] = 10
+## start[2] = 20
+add x3, x1, x2
+sub x4, x1, x2
+andi x5, x1, 0xFF
+ori x6, x2, 0x10
+xor x7, x1, x2
